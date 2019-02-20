@@ -1,0 +1,8 @@
+username =  //*[@id="username"]
+password = /html/body/table/tbody/tr/td/table/tbody/tr[1]/td/div/table/tbody/tr/td[2]/div/table/tbody/tr[6]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[2]/td/input
+login = /html/body/table/tbody/tr/td/table/tbody/tr[1]/td/div/table/tbody/tr/td[2]/div/table/tbody/tr[6]/td/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/a/div
+url = https://demo.actitime.com/login.do
+img = //table[@id='topnav']//div[@class='img']
+tables1 = //td[@class='taskNameBlock']
+tables2 = //td[@class='listtblcell_submit_tt listtblcell_submit_tt_background deadlineCell'] 
+task = //span[@class='checkmark workflowStatusNode_checkmark']/..//div[@class='name']
