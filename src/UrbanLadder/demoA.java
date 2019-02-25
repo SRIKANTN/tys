@@ -34,7 +34,8 @@ public class demoA
 			//
 			
 			act.moveToElement(menu).perform();
-			System.out.println(menu.getText());
+			System.out.println(menu.getText());System.out.println("===========================");
+			//Thread.sleep(1000);
 			Thread.sleep(1000);
 			for(WebElement el1 : submenu)
 			{
