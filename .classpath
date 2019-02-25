@@ -42,5 +42,6 @@
 	<classpathentry kind="lib" path="odfjars/xercesImpl-2.9.1.jar"/>
 	<classpathentry kind="lib" path="odfjars/xml-apis-1.3.04.jar"/>
 	<classpathentry kind="lib" path="jars/jaxen-1.1.1-patched-shani-1.4.17-sources.jar"/>
+	<classpathentry kind="lib" path="jars/extentreports-2.40.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

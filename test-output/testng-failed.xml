@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="excel.demoE">
+      <class name="extentreport.DemoA">
         <methods>
-          <include name="testdata"/>
+          <include name="reportsDemo"/>
+          <include name="starttest"/>
+          <include name="endtest"/>
         </methods>
-      </class> <!-- excel.demoE -->
+      </class> <!-- extentreport.DemoA -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
