@@ -9,11 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class reports 
 {
+	public static WebDriver driver;
 	static
 	{
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
@@ -21,12 +21,13 @@ public class reports
 	}
 	public static void main(String[] args) throws  Exception 
 	{
-		pomReports p = new pomReports();
+		
+		pomReports p = new pomReports(driver);
 		Properties pro = new Properties();
 		pro.load(new FileInputStream("Data/xpath.properties "));
 		Properties pro1 = new Properties();
 		pro1.load(new FileInputStream("Data/loginPageData.properties"));
-		WebDriver driver = new ChromeDriver();
+		 driver = new ChromeDriver();
 		driver.get(pro.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(pro.getProperty("username"))).sendKeys(pro1.getProperty("username"));
@@ -36,7 +37,23 @@ public class reports
 		driver.findElement(By.id("ext-gen38")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.id("PIE_CHART")).click();
-		p.reportsList();
+		Thread.sleep(1000);
+		List<WebElement> allreports = driver.findElements(By.xpath("//*[@class='amcharts-pie-slice']"));
+		List<WebElement> alltext = driver.findElements(By.xpath("//*[@font-size='11px']"));
+//		driver.findElement(By.xpath("//div[@id='createChartLightbox_cancelBtn']")).click();
+		Actions act= new Actions(driver);
+		for(WebElement we : allreports)
+		{
+			
+			
+			for(WebElement text : alltext)
+			{ 
+				Thread.sleep(1000);
+				act.moveToElement(we).perform();
+				we.click();
+				System.out.println(text.getText());
+			}
+		}
 		Thread.sleep(2000);
 		driver.close();
 	}
